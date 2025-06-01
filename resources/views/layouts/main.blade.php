@@ -38,10 +38,10 @@
             </div>
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
-                <a href="#" class="rounded-md bg-indigo-50 text-indigo-700 px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Team</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Projects</a>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Calendar</a>
+                <a href="#" class="rounded-md bg-indigo-50 text-indigo-700 px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Marketplace</a>
+                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Promo</a>
+                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Riwayat</a>
               </div>
             </div>
           </div>
@@ -97,10 +97,10 @@
       <!-- Mobile menu, show/hide based on menu state. -->
       <div class="sm:hidden" id="mobile-menu" x-show="mobileMenuOpen" x-transition>
         <div class="space-y-1 px-2 pt-2 pb-3 bg-white border-t border-gray-200">
-          <a href="#" class="block rounded-md bg-indigo-50 text-indigo-700 px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Team</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Projects</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Calendar</a>
+          <a href="#" class="block rounded-md bg-indigo-50 text-indigo-700 px-3 py-2 text-base font-medium" aria-current="page">Home</a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Marketplace</a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Promo </a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-indigo-700">Riwayat</a>
         </div>
       </div>
     </nav>
@@ -134,7 +134,7 @@
                 <rect x="3" y="7" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/>
                 <circle cx="17" cy="12" r="1" fill="currentColor"/>
             </svg>
-            <span class="text-xs font-medium">Rekber</span>
+            <span class="text-xs font-medium">Marketplace</span>
         </a>
         <!-- Promo -->
         <a href="#"
