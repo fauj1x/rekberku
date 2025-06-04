@@ -3,7 +3,7 @@
 @section('title', 'Profil')
 
 @section('content')
-<div class="max-w-md mx-auto md:max-w-lg lg:max-w-xl py-6 px-2 bg-[#f9f9fb] min-h-screen">
+<div class="max-w-md mx-auto md:max-w-lg lg:max-w-xl py-6 px-2 bg-[#ffffff] min-h-screen">
 
     <!-- Profile Card -->
     <div class="bg-white rounded-2xl shadow-sm flex flex-col items-center p-6 mb-4">
@@ -16,13 +16,13 @@
 
     <!-- Action Buttons -->
     <div class="flex flex-col gap-3 mb-4 sm:flex-row">
-        <a href="#" class="flex-1 flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50 transition group shadow-sm">
+        <a href="{{ route('coming-soon') }}" class="flex-1 flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50 transition group shadow-sm">
             Jual Item di Marketplace
             <svg class="w-5 h-5 text-violet-500 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
             </svg>
         </a>
-        <a href="#" class="flex-1 flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50 transition group shadow-sm">
+        <a href="{{ route('coming-soon') }}" class="flex-1 flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-gray-50 transition group shadow-sm">
             Lihat etalase
             <svg class="w-5 h-5 text-violet-500 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
@@ -37,7 +37,7 @@
         </div>
         <div class="divide-y divide-gray-100">
             <!-- Keamanan -->
-            <a href="#" class="flex items-center justify-between px-2 py-3 hover:bg-gray-50 rounded-xl transition group">
+            <a href="{{ route('profile.edit') }}" class="flex items-center justify-between px-2 py-3 hover:bg-gray-50 rounded-xl transition group">
                 <span class="flex items-center gap-3">
                     <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <rect width="16" height="12" x="4" y="7" rx="2" />
@@ -110,19 +110,22 @@
                 </svg>
             </a>
             <!-- Keluar -->
-            <a href="#" class="flex items-center justify-between px-2 py-3 hover:bg-gray-50 rounded-xl transition group">
-                <span class="flex items-center gap-3">
-                    <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24">
-                        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round"/>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="flex w-full items-center justify-between px-2 py-3 hover:bg-gray-50 rounded-xl transition group">
+                    <span class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round"/>
+                        </svg>
+                        Keluar
+                    </span>
+                    <svg class="w-5 h-5 text-violet-500 group-hover:translate-x-1 transition"
+                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                     </svg>
-                    Keluar
-                </span>
-                <svg class="w-5 h-5 text-violet-500 group-hover:translate-x-1 transition"
-                    fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
+                </button>
+            </form>
         </div>
     </div>
 

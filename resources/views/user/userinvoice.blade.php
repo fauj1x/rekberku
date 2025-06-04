@@ -62,7 +62,7 @@
         </div>
         <!-- Action Button -->
         <div class="mt-8 flex justify-center">
-            <button type="button" class="w-full rounded-md bg-[#ff7272] px-4 py-3 text-base font-semibold text-white shadow hover:bg-[#ff5a5a] transition">
+            <button type="button" class="w-full rounded-xl bg-[#ff7272] px-4 py-3 text-base font-semibold text-white shadow hover:bg-[#ff5a5a] transition">
                 Batalkan Transaksi
             </button>
         </div>
