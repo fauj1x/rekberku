@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('logs', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('transaction_id')->constrained();
-    $table->string('status_before');
-    $table->string('status_after');
-    $table->foreignId('changed_by')->constrained('users');
-    $table->timestamps();
-});
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->string('penanggung_biaya_admin')->nullable()->after('biaya_admin');
+        });
     }
 
     /**
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('logs');
+        Schema::table('transactions', function (Blueprint $table) {
+            //
+        });
     }
 };

@@ -3,8 +3,7 @@
 @section('title', 'Coming Soon!')
 
 @section('content')
-<div class="min-h-[75vh] flex flex-col items-center justify-center bg-gradient-to-br from-[#9256e6] to-[#2a3755] relative overflow-hidden">
-    <!-- Animated Confetti -->
+<div class="min-h-[75vh] flex flex-col items-center justify-center bg-gradient-to-br from-[#9256e6] to-[#2a3755] relative overflow-hidden rounded-3xl">    <!-- Animated Confetti -->
     <div class="absolute inset-0 pointer-events-none z-0">
         <canvas id="confetti-canvas" class="w-full h-full"></canvas>
     </div>

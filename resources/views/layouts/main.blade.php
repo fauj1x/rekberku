@@ -6,6 +6,9 @@
     <script defer src="//unpkg.com/alpinejs"></script>
     <title>@yield('title', 'Home')</title>
     @vite('resources/css/app.css')
+    
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
+
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
     <!-- Navbar -->
@@ -78,8 +81,15 @@
                 tabindex="-1"
               >
                 <a href="{{ route('user-profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700" role="menuitem" tabindex="-1">Your Profile</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700" role="menuitem" tabindex="-1">Sign out</a>
-              </div>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700" 
+                      role="menuitem" tabindex="-1"
+                      onclick="event.preventDefault(); this.closest('form').submit();">
+                        Sign out
+                    </a>
+                </form>              
+                </div>
             </div>
           </div>
         </div>
