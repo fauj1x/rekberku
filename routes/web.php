@@ -8,6 +8,8 @@ use App\Http\Controllers\User\UserInvoiceController;
 use App\Http\Controllers\User\StatusTransaksiController;
 use App\Http\Controllers\Guest\GuestInvoiceController;
 use App\Http\Controllers\User\ProfileController as UserProfileController;
+use App\Http\Controllers\MidtransController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,7 +24,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
+// tambah transaksi
 Route::get('/tambah-transaksi', [TambahTransaksiController::class, 'index'])->name('tambahtransaksi');
+Route::post('/transaksi/tambah', [TambahTransaksiController::class, 'store'])
+    ->name('user.tambahtransaksi.store')
+    ->middleware('auth');
+
+
 Route::get('/user-invoice-details', [UserInvoiceController::class, 'index'])->name('userinvoice');
 Route::get('/status-transaksi', [StatusTransaksiController::class, 'index'])->name('statustransaksi');
 Route::get('/guest-invoice-details', [GuestInvoiceController::class, 'index'])->name('guestinvoice');
@@ -39,3 +47,4 @@ Route::get('/temp', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('temp');
 
+Route::post('/midtrans/invoice', [MidtransController::class, 'createInvoice']);

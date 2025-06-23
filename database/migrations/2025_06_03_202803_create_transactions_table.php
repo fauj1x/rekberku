@@ -12,16 +12,40 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('buyer_id')->constrained('users');
-    $table->foreignId('seller_id')->constrained('users');
-    $table->string('item_name');
-    $table->decimal('amount', 12, 2);
-    $table->decimal('fee', 12, 2)->default(0);
-    $table->enum('status', ['pending', 'paid', 'delivered', 'released', 'cancelled'])->default('pending');
-    $table->text('notes')->nullable();
-    $table->timestamps();
-});
+            $table->id();
+
+            // Foreign key ke tabel users
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+
+            // Data transaksi
+            $table->string('item_image')->nullable(); // path file gambar
+            $table->enum('role', ['penjual', 'pembeli']);
+            $table->string('tujuan')->nullable();
+            $table->unsignedBigInteger('nominal')->nullable();
+            $table->unsignedBigInteger('total')->nullable(); // <--- Tambah kolom total transaksi
+            $table->date('tanggal')->nullable();
+            $table->string('buyer')->nullable();
+            $table->string('seller')->nullable();
+
+            // Rekening hanya jika role = penjual (boleh nullable)
+            $table->string('nomor_rekening')->nullable();
+
+            $table->text('deskripsi')->nullable();
+            $table->unsignedBigInteger('biaya_admin')->nullable();
+            $table->enum('penanggung_biaya_admin', ['pembeli', 'penjual', 'dibagi']);
+
+
+            // Agreement (harus dicentang, boolean)
+            $table->boolean('agreement')->default(false);
+
+            // Data bank tujuan pencairan
+            $table->string('bank_code')->nullable();
+            $table->string('bank_name')->nullable();
+
+            $table->text('payment_link')->nullable();
+
+            $table->timestamps();
+        });
     }
 
     /**

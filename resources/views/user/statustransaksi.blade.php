@@ -4,7 +4,6 @@
 
 @section('content')
 
-
 <ul role="list" class="space-y-4">
   <!-- Item: Success -->
   <li x-data="{ open: false }" class="transition-all duration-300 flex flex-col rounded-xl bg-emerald-50 shadow-sm cursor-pointer overflow-hidden"
@@ -35,6 +34,12 @@
         <div><span class="font-semibold">Buyer:</span> Muhammad</div>
         <div><span class="font-semibold">Seller:</span> Ahmad</div>
         <div><span class="font-semibold">Deskripsi:</span> Pembelian produk digital.</div>
+      </div>
+      <div class="mt-4">
+        <a href="{{ route('userinvoice', ['id' => 123]) }}"
+           class="inline-block px-4 py-2 rounded-full bg-emerald-500 text-white text-xs font-medium shadow hover:bg-emerald-600 transition">
+          Lihat Invoice
+        </a>
       </div>
     </div>
   </li>
@@ -68,6 +73,12 @@
         <div><span class="font-semibold">Seller:</span> Budi</div>
         <div><span class="font-semibold">Deskripsi:</span> Transaksi gagal karena saldo tidak cukup.</div>
       </div>
+      <div class="mt-4">
+        <a href="{{ route('userinvoice', ['id' => 124]) }}"
+           class="inline-block px-4 py-2 rounded-full bg-rose-400 text-white text-xs font-medium shadow hover:bg-rose-500 transition">
+          Lihat Invoice
+        </a>
+      </div>
     </div>
   </li>
   <!-- Item: Pending -->
@@ -99,6 +110,12 @@
         <div><span class="font-semibold">Buyer:</span> Andi</div>
         <div><span class="font-semibold">Seller:</span> Rina</div>
         <div><span class="font-semibold">Deskripsi:</span> Menunggu konfirmasi pembayaran.</div>
+      </div>
+      <div class="mt-4">
+        <a href="{{ route('userinvoice', ['id' => 125]) }}"
+           class="inline-block px-4 py-2 rounded-full bg-amber-400 text-white text-xs font-medium shadow hover:bg-amber-500 transition">
+          Lihat Invoice
+        </a>
       </div>
     </div>
   </li>
